@@ -4,7 +4,7 @@ const connectDB = async () =>
 {
     try
     {
-        const connect = await mongoose.connect("mongodb://127.0.0.1:27017/Task-Manager")
+        const connect = await mongoose.connect(process.env.MONGO_URI)
         console.log("DB connected")
 
     }catch(error)

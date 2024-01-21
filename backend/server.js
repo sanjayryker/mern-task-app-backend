@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose')
 const connectDB = require('./config/connectDB')
+const dotenv = require("dotenv").config()
 const cors = require('cors');
 const taskRoutes = require("./routes/taskRoute")
 const app = express();
@@ -17,7 +18,7 @@ app.use(cors({
 app.use("/api/tasks",taskRoutes)
 
 mongoose
-.connect("mongodb://127.0.0.1:27017/Task-Manager")
+.connect(process.env.MONGO_URI)
 .then(() =>
 {
     app.listen(PORT, () => 
