@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 5000;
 app.use(express.json())
 app.use(express.urlencoded({extended:false}));
 app.use(cors({
-    origin : ["http://localhost:3000","https://mern-task-app-oq9p.onrender.com","https://mern-task-app-oq9p.onrender.com/"]
+    origin : ["http://localhost:3000","https://mern-task-app-oq9p.onrender.com"]
 }));
 
 app.use("/api/tasks",taskRoutes)
